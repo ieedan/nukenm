@@ -1,0 +1,54 @@
+{
+  "name": "nukenm",
+  "description": "A CLI to nuke your node_modules and reinstall dependencies with your chosen package manager.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/ieedan/nukenm",
+  "author": {
+    "name": "Aidan Bleser",
+    "url": "https://github.com/ieedan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ieedan/nukenm"
+  },
+  "bugs": {
+    "url": "https://github.com/ieedan/nukenm/issues"
+  },
+  "keywords": [
+    "jsrepo",
+    "mcp",
+    "server",
+    "ai"
+  ],
+  "type": "module",
+  "bin": "./dist/index.mjs",
+  "main": "./dist/index.mjs",
+  "files": [
+    "dist/**/*",
+    "!dist/**/*.map"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "start": "node dist/index.mjs",
+    "format": "biome check --write",
+    "check": "tsc --noEmit && biome check"
+  },
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "commander": "^14.0.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.10",
+    "@changesets/cli": "^2.29.8",
+    "@types/node": "^25.0.3",
+    "package-manager-detector": "^1.6.0",
+    "picocolors": "^1.1.1",
+    "tinyexec": "^1.0.2",
+    "tsdown": "^0.18.2",
+    "ultracite": "6.5.0",
+    "zod": "^4.2.1",
+    "jsrepo": "^3.0.7"
+  }
+}
