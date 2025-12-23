@@ -1,7 +1,7 @@
 {
   "name": "nukenm",
   "description": "A CLI to nuke your node_modules and reinstall dependencies with your chosen package manager.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "homepage": "https://github.com/ieedan/nukenm",
   "author": {
