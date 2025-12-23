@@ -16,10 +16,11 @@
     "url": "https://github.com/ieedan/nukenm/issues"
   },
   "keywords": [
-    "jsrepo",
-    "mcp",
-    "server",
-    "ai"
+    "nuke",
+    "node",
+    "modules",
+    "remove",
+    "reinstall"
   ],
   "type": "module",
   "bin": "./dist/index.mjs",
