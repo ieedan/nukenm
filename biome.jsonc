@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/core"],
+  "formatter": {
+    "indentWidth": 4,
+    "indentStyle": "tab"
+  }
+}
