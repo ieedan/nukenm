@@ -1,7 +1,7 @@
 [![npm version](https://flat.badgen.net/npm/v/nukenm?color=yellow)](https://npmjs.com/package/nukenm)
 [![npm downloads](https://flat.badgen.net/npm/dm/nukenm?color=yellow)](https://npmjs.com/package/nukenm)
 
-# nukenm
+# 🍄‍🟫 nukenm
 
 A CLI to nuke node_modules and reinstall dependencies with your chosen package manager.
 
