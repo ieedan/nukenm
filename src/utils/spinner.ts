@@ -1,4 +1,4 @@
-import { sleep } from "./utils/sleep";
+import { sleep } from "./sleep";
 
 interface ISpinner {
 	start: () => ISpinner;

@@ -3,6 +3,7 @@ import path from "node:path";
 import { Command, Option } from "commander";
 import {
 	AGENTS,
+	type Agent,
 	detect,
 	type ResolvedCommand,
 	resolveCommand,
@@ -10,7 +11,7 @@ import {
 import pc from "picocolors";
 import { x } from "tinyexec";
 import { z } from "zod";
-import { Spinner } from "./spinner";
+import { Spinner } from "./utils/spinner";
 import { formatDuration, type Milliseconds } from "./utils/time";
 
 const IGNORE_DIRS = [".next", ".svelte-kit"];
@@ -52,6 +53,13 @@ export const cli = new Command()
 
 async function run(options: Options) {
 	const startedAt = Date.now();
+
+	// detect the package manager before removing everything
+	const pm =
+		options.packageManager ??
+		(await detect({ cwd: options.cwd }))?.agent ??
+		"npm";
+
 	const foundModules: string[] = [];
 	const spinner = new Spinner({
 		text: "Searching for node_modules",
@@ -88,7 +96,7 @@ async function run(options: Options) {
 	if (options.install) {
 		// Add a newline to separate the output
 		process.stdout.write("\n");
-		await reinstall(options);
+		await reinstall(pm);
 	}
 
 	process.exit(0);
@@ -137,11 +145,7 @@ async function nuke(
 	}
 }
 
-async function reinstall(options: Options) {
-	const pm =
-		options.packageManager ??
-		(await detect({ cwd: options.cwd }))?.agent ??
-		"npm";
+async function reinstall(pm: Agent) {
 	const installCommand =
 		resolveCommand(pm, "install", []) ??
 		({ command: "npm", args: ["install"] } satisfies ResolvedCommand);
