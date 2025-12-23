@@ -33,7 +33,9 @@
     "dev": "tsdown --watch",
     "start": "node dist/index.mjs",
     "format": "biome check --write",
-    "check": "tsc --noEmit && biome check"
+    "check": "tsc --noEmit && biome check",
+    "changeset-version": "changeset version && pnpm format",
+    "ci:release": "pnpm build && changeset publish"
   },
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
