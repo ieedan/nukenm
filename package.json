@@ -43,12 +43,13 @@
     "@biomejs/biome": "2.3.10",
     "@changesets/cli": "^2.29.8",
     "@types/node": "^25.0.3",
+    "jsrepo": "^3.0.7",
     "package-manager-detector": "^1.6.0",
     "picocolors": "^1.1.1",
     "tinyexec": "^1.0.2",
     "tsdown": "^0.18.2",
+    "typescript": "^5.9.3",
     "ultracite": "6.5.0",
-    "zod": "^4.2.1",
-    "jsrepo": "^3.0.7"
+    "zod": "^4.2.1"
   }
 }

@@ -51,8 +51,6 @@ export const cli = new Command()
 	});
 
 async function run(options: Options) {
-    
-
 	const startedAt = Date.now();
 	const foundModules: string[] = [];
 	const spinner = new Spinner({
